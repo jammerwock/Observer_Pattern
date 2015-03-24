@@ -11,14 +11,10 @@ interface IObserver {
 abstract class Observer implements IObserver{
 
     @Override
-    public void created(Object obj) {
-
-    }
+    abstract public void created(Object obj);
 
     @Override
-    public void modified(Object obj) {
-
-    }
+    abstract public void modified(Object obj) ;
 }
 
 class DefaultObserver extends Observer {
