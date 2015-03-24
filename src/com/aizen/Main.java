@@ -1,4 +1,4 @@
-// http://www.javenue.info/post/76
+package com.aizen;// http://www.javenue.info/post/76
 
 import java.util.ArrayList;
 
@@ -12,12 +12,12 @@ class DefaultObserver implements IObserver {
 
     @Override
     public void created(Object obj) {
-        System.out.println("DefaultObserver::created() for " + obj);
+        System.out.println("com.aizen.DefaultObserver::created() for " + obj);
     }
 
     @Override
     public void modified(Object obj) {
-        System.out.println("DefaultObserver::modified() for " + obj);
+        System.out.println("com.aizen.DefaultObserver::modified() for " + obj);
     }
 }
 
@@ -25,12 +25,12 @@ class MyObserver implements IObserver {
 
     @Override
     public void created(Object obj) {
-        System.out.println("MyObserver::created() for " + obj);
+        System.out.println("com.aizen.MyObserver::created() for " + obj);
     }
 
     @Override
     public void modified(Object obj) {
-        System.out.println("MyObserver::modified() for " + obj);
+        System.out.println("com.aizen.MyObserver::modified() for " + obj);
     }
 }
 
@@ -54,7 +54,7 @@ public class Main {
 
     @Override
     public String toString() {
-        return "Main";
+        return "com.aizen.Main";
     }
 
 
