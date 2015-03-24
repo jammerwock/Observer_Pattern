@@ -8,7 +8,20 @@ interface IObserver {
     void modified(Object obj);
 }
 
-class DefaultObserver implements IObserver {
+abstract class Observer implements IObserver{
+
+    @Override
+    public void created(Object obj) {
+
+    }
+
+    @Override
+    public void modified(Object obj) {
+
+    }
+}
+
+class DefaultObserver extends Observer {
 
     @Override
     public void created(Object obj) {
@@ -21,7 +34,7 @@ class DefaultObserver implements IObserver {
     }
 }
 
-class MyObserver implements IObserver {
+class MyObserver extends Observer {
 
     @Override
     public void created(Object obj) {
@@ -47,10 +60,15 @@ class Observers<T extends IObserver> extends ArrayList<T> {
             obs.modified(obj);
         }
     }
+
+    @Override
+    public void add(int index, T element) {
+        super.add(index, element);
+    }
 }
 
 public class Main {
-    Observers obs = new Observers();
+    Observers<Observer> obs = new Observers<Observer>();
 
     @Override
     public String toString() {
